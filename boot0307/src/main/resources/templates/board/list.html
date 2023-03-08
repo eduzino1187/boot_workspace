@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 헤더 링크 들어올곳 -->
+	<th:block th:replace="/inc/header_link"/>	
+</head>
+<body>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>john@example.com</td>
+			</tr>
+			<tr>
+				<td>Mary</td>
+				<td>Moe</td>
+				<td>mary@example.com</td>
+			</tr>
+			
+
+		</tbody>
+	</table>
+	
+	<!-- 푸터 들어올곳 -->
+	<th:block th:replace="/inc/footer"/>	
+</body>
+</html>
+
