@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
-
+	
+	<!-- 오라클의 경우 insert 할때 pk 값을 구할수 있지만(시퀀스덕에) 
+		mysql은 먼저 insert 를 하고나서야, pk 를 구할 수 있다.. 
+	-->
+	<insert id="insert" parameterType="Board">
+		insert into board(title, writer, content) 
+		values(#{title}, #{writer}, #{content})
+		
+		<!-- insert 직후에 이  insert에 의해 증가된 pk값 구하기 -->
+		<selectKey 
+			keyColumn="board_idx" 
+			keyProperty="board_idx" 
+			order="AFTER"
+			resultType="int">
+			select last_insert_id() as board_idx
+		</selectKey>
+	</insert>
+	
 </mapper>
+
+
+
+

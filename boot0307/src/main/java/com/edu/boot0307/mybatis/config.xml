@@ -9,6 +9,6 @@
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="com/edu/boot0307/mybatis/config/BoardMapper.xml" />
+		<mapper resource="com/edu/boot0307/mybatis/BoardMapper.xml" />
 	</mappers>
 </configuration>
